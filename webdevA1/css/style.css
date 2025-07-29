@@ -1,0 +1,260 @@
+@font-face {
+	font-family: 'lunchds';
+	src: url('../fonts/lunchds.woff') format('woff');
+}
+/* Credit: codeman38 for the font, font was found on https://fontsforweb.com */
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	line-height: 2em;
+}
+
+/*This is to center objects with these tags*/
+h2, td, .centerme, .half{
+	text-align: center;
+}
+
+/*Making the image resizable depending on the screen width, up till the maximum width of the image*/
+.responsiveImage {
+	max-width: 100%;
+}
+
+/*Creating a video that allows the video to be resizable similar to the image*/
+.vid-container {
+	position: relative;
+	overflow: hidden;
+	width:100%;
+	padding-top: 56.25%;
+}
+
+iframe {
+	position: absolute;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	width: 100%;
+	height: 100%;
+}
+
+/* Setting the body as a grid container as well as setting a loopable background image */
+body {
+	background-image: url(../images/bg-sky-300x201.png);
+	background-position: center;
+	color: white;
+	display: grid;
+	grid-template-columns: 8fr 2fr;
+	grid-template-rows: 50px 2fr 125px;
+}
+
+header {
+	background-color: rgba(0, 0, 255, 0.5);
+	float: left;
+	width: 100%;
+}
+
+/*A special id for one header that is part of the menu that scrolls along with the screen
+Setting the z-index to 1 for both the menuheader as well as the nav since they need to be on top of other elements when scrolling along with the screen*/
+#menuHeader {
+	background-color: rgba(119, 119, 228, 1);
+	grid-column: 1/2;
+	grid-row: 1/2;
+	position: sticky;
+	top: 0;
+	z-index: 1;
+}
+
+/*Navigation bar */
+nav {
+	background-color: rgba(135, 206, 250, 1);
+	padding-left: 10px;
+	grid-column: 2/3;
+	grid-row: 1/2;
+	position: sticky;
+	top: 0;
+	z-index: 1;
+}
+
+/*Hiding the navigation bar for tablet and desktop sizes in mobile*/
+nav div {
+	display: none;
+}
+
+/*Showing the mobile version of the navigation bar*/
+details {
+	display: block;
+}
+
+/*Below are just css code for styling the links as clickable buttons*/
+nav ul, header ul, details ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+nav ul li, header ul li, details ul li{
+	float: left;
+	padding-right:10px;
+}
+
+.rightFloat {
+	float: right; 
+}
+
+nav ul li a, header ul li h2 a, details ul li a, footer a {
+	text-decoration: none;
+	background: rgba(0, 255, 255, 0.4);
+	display: block;
+	float: right;
+	padding: 0.5em;
+}
+
+details ul li a, footer a {
+	background: rgba(0, 255, 255, 0.8);
+}
+
+header ul li h2 a {
+	padding:0.05em;
+}
+
+nav ul li a:hover, header ul li h2 a:hover {
+	background: rgba(0, 255, 255, 0.7);
+}
+
+details ul li a:hover, footer a:hover {
+	background: rgba(0, 255, 255, 1);
+}
+
+/*Below is just defining the colour and position of the main and footer*/
+main {
+	background-color: rgba(128,128,128,0.5);
+	padding-left: 10px;
+	padding-right: 10px;
+	grid-column: 1/3;
+	grid-row: 2/3;
+}
+
+footer{
+	background-color: rgba(0, 0, 255, 0.5);
+	grid-column: 1/3;
+	grid-row: 3/4;
+}
+
+/*Clearing all usage of float*/
+.clearfloat {
+	float: none;
+	clear: both;
+}
+
+/*This is for making an element occupy half of the available width*/
+.half {
+	float: left;
+	width: 50%;
+}
+
+/*Applying the downloaded font*/
+h1, h2, h3, h4 {
+	font-family: 'lunchds', serif;
+}
+
+/*Giving the the table borders to look nicer*/
+table, th, td {
+	border: 1px solid black;
+}
+
+/*Media query for tablet sized screens*/
+@media (min-width: 768px) {
+	/*Redifining the positions of the different elements in the grid container(body)*/
+	body {
+		grid-template-columns: 1fr;
+		grid-template-rows: 50px 50px 2fr 125px;
+	}
+
+	#menuHeader{
+		grid-column: 1/2;
+		grid-row: 1/2;
+	}
+	
+
+	nav {
+		grid-column: 1/2;
+		grid-row: 2/3;
+		top: 50px;
+	}
+
+	main {
+		grid-column: 1/2;
+		grid-row: 3/4;
+	}
+
+	footer {
+		grid-column: 1/2;
+		grid-row:4/5;
+	}
+
+	/*Below I am now making the navigation bar for desktop and tablet sizes visible and interactive*/
+	nav div {
+		display: block;
+	}
+
+	/*While now disabling the navigation bar for mobile sizes*/
+	details {
+		display: none;
+	}
+
+	/*Below code is setting up the flex container and defining the different cases that it can be used*/
+	.flexContainer {
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	.flexItemDT, .flexItemDF, .flexItemDD {
+		flex: 50%;
+	}
+
+	.flexItemFF, .flexItemFD {
+		flex: 100%;
+	}
+}
+
+@media (min-width: 1280px) {
+	/*Again redefining the layout of elements in the grid container*/
+	body {
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: 50px 2fr 125px;
+	}
+
+	#menuHeader {
+		grid-column: 1/2;
+		grid-row: 1/2;
+	}
+
+	nav {
+		grid-column: 2/3;
+		grid-row: 1/2;
+		top: 0;
+	}
+
+	main {
+		grid-column: 1/3;
+		grid-row: 2/3;
+	}
+
+	footer {
+		grid-column: 1/3;
+		grid-row: 3/4;
+	}
+
+	.flexItemFD {
+		flex: 50%;
+	}
+
+	.flexItemDT {
+		flex: 1;
+	}
+
+	.flexItemDF {
+		flex: 100%;
+	}
+}
