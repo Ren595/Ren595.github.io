@@ -1,0 +1,183 @@
+@font-face {
+	font-family: 'Archive';
+	src: local('Archive'), url('./fonts/Archive.woff') format('woff');
+}
+
+/* Font downloaded from FontsForWeb.com */
+
+@keyframes shake {
+    0%{rotate:0deg}
+    25%{rotate:45deg}
+    50%{rotate:0deg}
+    100%{rotate:-45deg}
+}
+
+.page{
+    width:100%;
+    background: #C4C4C4;
+    border:1px solid black;
+}
+
+#quizSection {
+    display: none;
+}
+
+
+nav ul li{display:inline;}
+
+#mainHeader {
+    float: left;
+    width: 40%;
+    height:70px;
+    background: black;
+}
+
+#mainHeader h1 {
+    color: white;
+    font-family: 'Archive';
+}
+
+h2, h3, h4, p {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+nav {
+    float: left;
+    width: 60%;
+    height:70px;
+    background: white;
+}
+
+main {
+    float: none;
+    clear: both;
+}
+
+footer {
+    background: #808080;
+    padding: 5px;
+}
+
+article {
+    padding: 5px;
+}
+
+/*Making the image resizable depending on the screen width, up till the maximum width of the image*/
+.responsiveImage {
+	max-width: 100%;
+}
+
+/*Creating a video that allows the video to be resizable similar to the image*/
+.vid-container {
+	position: relative;
+	overflow: hidden;
+	width:100%;
+	padding-top: 56.25%;
+}
+
+iframe {
+	position: absolute;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	width: 100%;
+	height: 100%;
+}
+
+nav ul {
+    float: right;
+}
+
+footer ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+footer ul li {
+    padding-top: 10px;
+}
+
+footer ul li a {
+    color: rgb(128, 212, 240);
+}
+
+.flexContainer {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.flexItemDF {
+    flex: 50%;
+}
+
+.flexItemFF {
+	flex: 100%;
+}
+
+.centerme, h3, section header {
+    text-align: center;
+}
+
+/*to unhide menu items*/
+.menuShow{display:block;}
+
+.openMenu {
+	background: url('images/menuIconSpritesheet.png') no-repeat -379px -64px;
+	width: 63px;
+	height: 57px;
+}
+
+
+.closeMenu {
+	background: url('images/menuIconSpritesheet.png') no-repeat -380px -171px;
+	width: 57px;
+	height: 47px;
+}
+
+.boxBackground h4, .boxBackground p{
+    width: 250px;
+    height: 100px;
+    text-align: center;
+}
+
+.boxBackground h4 {
+    background: lightgray;
+}
+
+.boxBackground h4:hover {
+    animation: shake 1s;
+}
+
+.boxBackground p {
+    background: lightblue;
+}
+
+/*CSS for responsive menu*/
+#hamIcon{display:none;}
+
+#qrcode {
+    display: block;
+}
+
+@media (max-width:800px){
+    /*make a menu items vertical*/
+    nav ul li{display:block;z-index: 1;}
+    /* unhide menu icon */
+    #hamIcon{display:block;}
+    /*hide the menu item list*/
+    nav ul{display:none;}
+    nav button {
+        float:right;
+    }
+
+    #qrcode {
+        display: none;
+    }
+
+    .flexItemDF {
+        flex: 100%;
+    }
+}
+
